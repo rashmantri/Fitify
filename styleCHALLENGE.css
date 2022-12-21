@@ -1,0 +1,45 @@
+.name {
+    background-color: rgb(212, 208, 208);
+    color: black;
+    font-size: 20px;
+ font-family: consolas;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+#headi {
+    padding-top: 30px;
+    color: rgb(253, 253, 253);
+    background-color:#535ba0;
+    float: none;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-left: 5%;
+    padding-right: 5%;
+ font-family: consolas;
+   
+    padding-bottom: 5%;
+
+
+
+
+}
+
+#bumton {
+    color: white;
+    background-color: darkgreen;
+    border: none;
+    height: 40px;
+    width: 70px;
+
+
+}
+
+::selection {
+    background-color: rgb(212, 208, 208);
+    color: rgb(212, 208, 208);
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>BMI</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="styleCHALLENGE.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Titan+One&display=swap" rel="stylesheet">
+
+</head>
+<script>
+    function calc() {
+
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        let k = num1 / (num2 * num2);
+        let rounded = k.toFixed(1);
+        document.getElementById("result").innerHTML = rounded;
+
+
+        if (rounded >= 1 && rounded <= 18.5) {
+            document.getElementById("gfg2")
+                .innerHTML = "YOUR BMI IS " + rounded +
+                " YOU ARE IN UNDERWEIGHT RANGE <br> Eat more frequently <br> Choose nutrient-rich foods <br> Try smoothies and shakes <br> Watch when you drink <br> ";
+
+        }
+    }
+    if (rounded >= 18.5 && rounded <= 24.9) {
+        document.getElementById("gfg2")
+            .innerHTML = "YOUR BMI IS " + rounded +
+            " YOU ARE IN HEALTHY WEIGHT RANGE <br><br> Maintaining a healthy weight may reduce the risk of chronic diseases associated with overweight and obesity. ";
+    }
+    if (rounded >= 25 && rounded <= 29.9) {
+        document.getElementById("gfg2")
+            .innerHTML = "YOUR BMI IS " + rounded +
+            " YOU ARE IN OVERWEIGHT RANGE <br> Choosing healthier foods (whole grains, fruits and vegetables, healthy fats and protein sources) and beverages <br> Limiting unhealthy foods (refined grains and sweets, potatoes, red meat, processed meat) and beverages (sugary drinks) <br> Increasing physical activity <br> Limiting television time, screen time, and other “sit time” <br> Improving sleep <br> Reducing stress";
+    }
+    if (rounded >= 30) {
+        document.getElementById("gfg2")
+            .innerHTML = "YOUR BMI IS " + rounded +
+            " YOU ARE IN OBESE RANGE <br> Healthy eating plan and regular physical activity <br> Changing your habits <br> Weight-management programs <br> Weight-loss medicines <br> Weight-loss devices ";
+    }
+</script>
+
+
+<body>
+    <form>
+        <div id="headi">
+            <h1 id="helmo">BMI CALCULATOR</h1>
+            <div class="name">
+                <p>SELECT YOUR GENDER:</p>
+
+                <div id="group">
+                </div>
+                <p id="output"></p>
+                <script>
+                    const sizes = ['Male', 'Female'];
+
+                    // generate the radio groups        
+                    const group = document.querySelector("#group");
+                    group.innerHTML = sizes.map((size) => `<div>
+                            <input type="radio" name="size" value="${size}" id="${size}">
+                             <label for="${size}">${size}</label>
+                        </div>`).join(' ');
+
+                    // add an event listener for the change event
+                    const radioButtons = document.querySelectorAll('input[name="size"]');
+                    for (const radioButton of radioButtons) {
+                        radioButton.addEventListener('change', showSelected);
+                    }
+
+                    function showSelected(e) {
+                        console.log(e);
+                        if (this.checked) {
+                            document.querySelector('#output').innerText = `You selected ${this.value}`;
+                        }
+                    }
+                </script>
+
+                Enter Weight (KGS) : <input type="text" id="firstNumber" /><br>
+                <br>
+                Enter Height (m): <input type="text" id="secondNumber" /><br>
+                <br>
+                <input type="button" onClick="calc()" onclick="typeWriter()" Value="Calculate" id="bumton" />
+
+    </form>
+    <p>YOUR BMI IS: <br>
+        <span id="result"></span>
+    </p>
+    <p id="gfg2"></p>
+    </div>
+    </div>
+</body>
+
+</html>
